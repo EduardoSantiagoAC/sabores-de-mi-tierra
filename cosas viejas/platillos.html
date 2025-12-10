@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platillos - Sabores de Mi Tierra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://as1.ftcdn.net/v2/jpg/08/95/25/90/1000_F_895259039_vudCnamcUKRCCAgdEwmfan8QJKgxW2QB.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(245, 222, 179, 0.6); 
+            filter: blur(10px); 
+            z-index: -1;
+        }
+        .header {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(2px);
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-left: 20px;
+        }
+        .menu li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .title-section {
+            text-align: center;
+            padding: 3px; 
+            background: linear-gradient(to bottom, #F5DEB3, #DEB887); 
+            color: #8B4513;
+            position: relative;
+            z-index: 10;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #8B4513;
+            border-radius: 4px;
+        }
+        ul li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #DEB887;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #F5DEB3;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #FFF8DC;
+        }
+        tr:hover {
+            background-color: #F5DEB3;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+        input, textarea, select {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #F5DEB3;
+            color: #8B4513;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DEB887;
+        }
+        .credits {
+            background-color: #F5DEB3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+        }
+        footer {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 10;
+        }
+        
+        .dishes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .dish-card {
+            background-color: white;
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            width: 30%;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .dish-card:hover {
+            transform: scale(1.05);
+        }
+        .dish-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 0 auto 10px;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #FFF8DC;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #DEB887;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            color: #8B4513;
+            position: relative;
+        }
+        .close {
+            color: #8B4513;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #D2691E;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Sabores de Mi Tierra</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="platillos.html">Platillos</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="enlaces.html">Enlaces</a></li>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+            <li style="margin-left: auto;">
+             <a href="usuarios/login.php" title="Panel de Administración" 
+               style="color: rgba(139, 69, 19, 0.9); font-size: 1.2em; text-decoration: none;">
+              <i class="fas fa-user"></i>
+             </a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="title-section">
+        <h1>Platillos Representativos de San Luis Potosí</h1>
+    </section>
+
+    <section class="content">
+        <p>Descubre los platillos emblemáticos de la gastronomía potosina, cada uno con una historia única que refleja la fusión de culturas indígenas, españolas y mestizas. Estos son algunos de los más queridos en la región.</p>
+
+        <div class="dishes-container">
+            <div class="dish-card">
+                <img src="https://assets.unileversolutions.com/recipes-v2/99420.png" alt="Enchiladas Potosinas: Tortillas rojas rellenas de queso">
+                <h3>Enchiladas Potosinas</h3>
+                <p>Tortillas de maíz teñidas de rojo con chiles guajillo y ancho, rellenas de queso fresco, enrolladas y fritas ligeramente. Se sirven con cebolla, zanahoria y papas encurtidas en vinagre. Un antojito callejero irresistible.</p>
+            </div>
+
+            <div class="dish-card">
+                <img src="https://reflectores.mx/wp-content/uploads/Tamal-Gigantes-1024x631.jpg" alt="Zacahuil: Tamal gigante potosino">
+                <h3>Zacahuil</h3>
+                <p>El tamal más grande de México, elaborado con masa de maíz, carne de puerco o pollo, chiles y especias, envuelto en hojas de plátano y cocido en un horno de tierra durante horas. Tradicional en fiestas huastecas.</p>
+            </div>
+
+            <div class="dish-card">
+                <img src="https://www.turimexico.com/wp-content/uploads/2016/08/Receta-Asado-de-Boda.jpg" alt="Asado de Boda: Carne en salsa roja">
+                <h3>Asado de Boda</h3>
+                <p>Carne de res en una salsa espesa de chiles secos, tomate y especias, cocinada lentamente. Se prepara para bodas y celebraciones, simbolizando unión y abundancia en la mesa potosina.</p>
+            </div>
+
+            <div class="dish-card">
+                <img src="https://i.pinimg.com/736x/19/c3/ff/19c3ff69924af7fdb14f18395faf067f.jpg" alt="Pollo en Jugo de Jitomate: Pollo en salsa de tomate">
+                <h3>Pollo en Jugo de Jitomate</h3>
+                <p>Pollo guisado en una salsa fresca de jitomate, cebolla y chiles, sazonado con hierbas locales. Un platillo sencillo pero lleno de sabor, común en las comidas familiares de la región.</p>
+            </div>
+
+            <div class="dish-card">
+                <img src="https://tse4.mm.bing.net/th/id/OIP.YVoz3_PKtBox65pjmyXXLAHaFj?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Empanadas de Fruta: Postre frito">
+                <h3>Empanadas de Fruta</h3>
+                <p>Masa de trigo rellena de frutas secas como guayaba o piña, frita hasta dorada y espolvoreada con azúcar. Dulce tradicional de las fiestas, influenciado por las recetas conventuales.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalTitle"></h3>
+            <p id="modalText"></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Eduardo Santiago Acosta Cárdenas | Instituto Tecnológico de Matehuala</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('myModal');
+        const span = document.getElementsByClassName("close")[0];
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.querySelectorAll('.dish-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const title = card.querySelector('h3').textContent;
+                let history = '';
+
+                if (title === 'Enchiladas Potosinas') {
+                    history = 'Las enchiladas potosinas nacieron por accidente en el siglo XIX, cuando Doña Cristina Jalomo, de Soledad, San Luis Potosí, mezcló accidentalmente su masa de nixtamal con salsa roja de chiles, creando las icónicas tortillas rojas. Este error se convirtió en un tesoro gastronómico regional.';
+                } else if (title === 'Zacahuil') {
+                    history = 'De origen prehispánico huasteco, el zacahuil es un tamal gigante preparado en comunidad para fiestas, envuelto en hojas de plátano y cocido en pozos de tierra. Representa la unión y abundancia de la cultura indígena potosina.';
+                } else if (title === 'Asado de Boda') {
+                    history = 'Nacido durante la Revolución Mexicana en San Luis Potosí, este platillo era un adobo espeso de chiles anchos, mulatos y pasillas para conservar carne en tiempos difíciles. Hoy, es indispensable en bodas, simbolizando celebración y unión.';
+                } else if (title === 'Pollo en Jugo de Jitomate') {
+                    history = 'Este guiso sencillo surge de la fusión mestiza colonial, combinando el jitomate indígena con el pollo introducido por los españoles. Es un plato humilde de las cocinas familiares potosinas, transmitido de generación en generación.';
+                } else if (title === 'Empanadas de Fruta') {
+                    history = 'Influenciadas por las recetas españolas en los conventos del siglo XVII, estas empanadas usan frutas locales como guayaba y piña para crear dulces fritos. Son un legado de la dulcería conventual en las fiestas potosinas.';
+                }
+
+                document.getElementById('modalTitle').textContent = title;
+                document.getElementById('modalText').textContent = history;
+                modal.style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>

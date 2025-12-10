@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia - Sabores de Mi Tierra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://t3.ftcdn.net/jpg/06/51/90/22/360_F_651902202_FrkRDw0DjP5F1PfIDf1EUTJtcN33BBf2.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(245, 222, 179, 0.6); 
+            filter: blur(10px); 
+            z-index: -1;
+        }
+        .header {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(2px);
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-left: 20px;
+        }
+        .menu li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .title-section {
+            text-align: center;
+            padding: 3px; 
+            background: linear-gradient(to bottom, #F5DEB3, #DEB887); 
+            color: #8B4513;
+            position: relative;
+            z-index: 10;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #8B4513;
+            border-radius: 4px;
+        }
+        ul li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #DEB887;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #F5DEB3;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #FFF8DC;
+        }
+        tr:hover {
+            background-color: #F5DEB3;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+        input, textarea, select {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #F5DEB3;
+            color: #8B4513;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DEB887;
+        }
+        .credits {
+            background-color: #F5DEB3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+        }
+        footer {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 10;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .video-card {
+            background-color: white;
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            margin: 15px 0;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <header class="header">
+        <div class="logo">Sabores de Mi Tierra</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="platillos.html">Platillos</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="enlaces.html">Enlaces</a></li>
+            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+            <li style="margin-left: auto;">
+             <a href="usuarios/login.php" title="Panel de Administración" 
+               style="color: rgba(139, 69, 19, 0.9); font-size: 1.2em; text-decoration: none;">
+              <i class="fas fa-user"></i>
+             </a>
+            </li>
+
+        </ul>
+    </header>
+
+    <section class="title-section">
+        <h1>Contenido Multimedia: Videos y Clips</h1>
+    </section>
+
+    <section class="content">
+        <p>Sumérgete en la vibrante gastronomía potosina a través de videos que capturan la preparación de platillos, entrevistas con cocineros locales y clips de ferias tradicionales. Estos recursos audiovisuales te transportarán al corazón de San Luis Potosí.</p>
+
+        <div class="video-card">
+            <h3>Preparación de Enchiladas Potosinas</h3>
+            <p>Un tutorial paso a paso de cómo elaborar este icónico antojito, con tips de una cocinera tradicional de Matehuala.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YADmURSYFMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <h3>Feria Nacional Potosina: Zacahuil Gigante</h3>
+            <p>Clip de la elaboración comunitaria de un zacahuil en la feria, destacando la tradición huasteca y el ambiente festivo.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/t-AgNM9TS_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <h3>Entrevista: El Asado de Boda</h3>
+            <p>Una cocinera experta comparte la historia familiar detrás del asado de boda y su receta secreta.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/9x_RmkJXeb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <h3>Dulces Conventuales: Empanadas de Fruta</h3>
+            <p>Explorando las raíces coloniales de los dulces potosinos con un video en un convento histórico.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/a_nSnjdsplM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <h3>Pollo en Jugo de Jitomate</h3>
+            <p>Un guiso tradicional potosino con pollo en salsa de jitomate fresca.</p>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/0CwTGhH6zQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eduardo Santiago Acosta Cárdenas | Instituto Tecnológico de Matehuala</p>
+    </footer>
+</body>
+</html>

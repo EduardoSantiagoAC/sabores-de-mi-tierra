@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces - Sabores de Mi Tierra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://as1.ftcdn.net/v2/jpg/08/95/25/90/1000_F_895259039_vudCnamcUKRCCAgdEwmfan8QJKgxW2QB.jpg'); 
+            background-position: center;
+            background-color: rgba(245, 222, 179, 0.6); 
+            filter: blur(5px); 
+            z-index: -1;
+        }
+        .header {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(2px);
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-left: 20px;
+        }
+        .menu li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .title-section {
+            text-align: center;
+            padding: 3px; 
+            background: linear-gradient(to bottom, #F5DEB3, #DEB887); 
+            color: #8B4513;
+            position: relative;
+            z-index: 10;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #8B4513;
+            border-radius: 4px;
+        }
+        ul li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #DEB887;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #F5DEB3;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #FFF8DC;
+        }
+        tr:hover {
+            background-color: #F5DEB3;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+        input, textarea, select {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #F5DEB3;
+            color: #8B4513;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DEB887;
+        }
+        .credits {
+            background-color: #F5DEB3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+        }
+        footer {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+        <header class="header">
+        <div class="logo">Sabores de Mi Tierra</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="platillos.html">Platillos</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="enlaces.html">Enlaces</a></li>
+            <!-- Font Awesome en tu <head> -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+            <li style="margin-left: auto;">
+             <a href="usuarios/login.php" title="Panel de Administración" 
+               style="color: rgba(139, 69, 19, 0.9); font-size: 1.2em; text-decoration: none;">
+              <i class="fas fa-user"></i>
+             </a>
+            </li>
+
+        </ul>
+    </header>
+
+    <section class="title-section">
+        <h1>Recursos Adicionales y Enlaces Útiles</h1>
+    </section>
+
+    <section class="content">
+        <p>Explora más sobre la gastronomía de San Luis Potosí con estos enlaces a sitios confiables, recetas detalladas y recursos culturales. Todos los contenidos de este sitio se basan en investigaciones de fuentes públicas y tradiciones locales.</p>
+
+        <ul>
+            <li><a href="https://turismo.slp.gob.mx/" target="_blank">Turismo SLP - Sección de Gastronomía</a><br>Descubre guías oficiales de platillos típicos y eventos culinarios en el estado.</li>
+            <li><a href="https://www.mexicodesconocido.com.mx/gastronomia-potosina-la-excelencia-de-una-tradicion.html" target="_blank">México Desconocido - Gastronomía Potosina</a><br>Artículos profundos sobre la historia y recetas de la cocina regional.</li>
+            <li><a href="https://www.recetasnestle.com.mx/recetas/enchiladas-potosinas" target="_blank">Recetas Nestlé - Enchiladas Potosinas</a><br>Receta paso a paso con variaciones caseras para este platillo emblemático.</li>
+            <li><a href="https://www.youtube.com/results?search_query=zacahuil+preparacion" target="_blank">YouTube - Preparación de Zacahuil</a><br>Videos tutoriales y documentales sobre la elaboración del tamal huasteco.</li>
+            <li><a href="https://www.gob.mx/agricultura%257Csanluispotosi/articulos/platillos-tipicos-de-san-luis-potosi" target="_blank">Gobierno de México - Gastronomía de San Luis Potosí</a><br>Recursos culturales y patrimoniales del INAH sobre tradiciones alimentarias.</li>
+            <li><a href="https://www.youtube.com/watch?v=9x_RmkJXeb0" target="_blank">YouTube - Asado de Boda Potosino</a><br>Receta detallada con ingredientes y consejos para celebraciones.</li>
+        </ul>
+
+        <div class="credits">
+            <h2>Créditos</h2>
+            <p>Este sitio web fue desarrollado como parte de la actividad de Programación Web en el Instituto Tecnológico de Matehuala. Imágenes y videos son representativos y de dominio público o placeholders. Fuentes consultadas incluyen sitios educativos y turísticos oficiales.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eduardo Santiago Acosta Cárdenas | Instituto Tecnológico de Matehuala</p>
+    </footer>
+</body>
+</html>

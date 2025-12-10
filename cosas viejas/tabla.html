@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla - Sabores de Mi Tierra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://static.vecteezy.com/system/resources/previews/006/901/450/large_2x/guanajuato-mexico-scenic-cobbled-streets-and-traditional-colorful-colonial-architecture-in-guanajuato-historic-city-center-photo.jpg'); /* Reemplaza esta URL con tu imagen */
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(245, 222, 179, 0.6); 
+            filter: blur(10px); 
+            z-index: -1;
+        }
+        .header {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(2px);
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-left: 20px;
+        }
+        .menu li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .title-section {
+            text-align: center;
+            padding: 3px; 
+            background: linear-gradient(to bottom, #F5DEB3, #DEB887); 
+            color: #8B4513;
+            position: relative;
+            z-index: 10;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #8B4513;
+            border-radius: 4px;
+        }
+        ul li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(222, 184, 135, 0.3); 
+        }
+        th {
+            background: linear-gradient(135deg, #F5DEB3, #DEB887); 
+            color: #8B4513;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        tr:nth-child(even) {
+            background-color: rgba(255, 248, 220, 0.6); 
+        }
+        tr:hover {
+            background-color: rgba(245, 222, 179, 0.4); 
+            transform: scale(1.01); 
+            transition: all 0.2s ease;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+        input, textarea, select {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #F5DEB3;
+            color: #8B4513;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DEB887;
+        }
+        .credits {
+            background-color: #F5DEB3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+        }
+        footer {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">Sabores de Mi Tierra</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="platillos.html">Platillos</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="enlaces.html">Enlaces</a></li>
+            <!-- Font Awesome en tu <head> -->
+<!-- Font Awesome en tu <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<li style="margin-left: auto;">
+  <a href="usuarios/login.php" title="Panel de Administración" 
+     style="color: rgba(139, 69, 19, 0.9); font-size: 1.2em; text-decoration: none;">
+    <i class="fas fa-user"></i>
+  </a>
+</li>
+
+
+        </ul>
+    </header>
+
+    <section class="title-section">
+        <h1>Comparación de Ingredientes en la Gastronomía Potosina</h1>
+    </section>
+
+    <section class="content">
+        <p>Esta tabla compara ingredientes clave en la cocina tradicional de San Luis Potosí, destacando su origen cultural, usos comunes y ejemplos de platillos donde se emplean. Estos elementos reflejan la rica herencia indígena y mestiza de la región.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingrediente</th>
+                    <th>Origen</th>
+                    <th>Usos Principales</th>
+                    <th>Ejemplo de Platillo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maíz</td>
+                    <td>Indígena (Huasteco/Chichimeca)</td>
+                    <td>Masa para tamales, tortillas y atoles; base de la dieta prehispánica</td>
+                    <td>Zacahuil</td>
+                </tr>
+                <tr>
+                    <td>Chile (Guajillo/Ancho)</td>
+                    <td>Indígena</td>
+                    <td>Sazonador picante, colorante natural en salsas y guisados</td>
+                    <td>Enchiladas Potosinas</td>
+                </tr>
+                <tr>
+                    <td>Queso Fresco</td>
+                    <td>Español (introducido en colonia)</td>
+                    <td>Relleno en antojitos, topping en sopas y ensaladas</td>
+                    <td>Enchiladas Potosinas</td>
+                </tr>
+                <tr>
+                    <td>Carne de Res</td>
+                    <td>Español (ganado introducido)</td>
+                    <td>Guisados, asados y caldos; proteína central en celebraciones</td>
+                    <td>Asado de Boda</td>
+                </tr>
+                <tr>
+                    <td>Jitomate</td>
+                    <td>Indígena</td>
+                    <td>Salsas frescas, guisados y adobos; aporta acidez y frescura</td>
+                    <td>Pollo en Jugo de Jitomate</td>
+                </tr>
+                <tr>
+                    <td>Frutas Secas (Guayaba)</td>
+                    <td>Mestizo (conventual)</td>
+                    <td>Rellenos dulces, mermeladas y postres fritos</td>
+                    <td>Empanadas de Fruta</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Esta comparación ilustra cómo los ingredientes indígenas se fusionaron con los europeos para crear la diversidad de sabores potosinos.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eduardo Santiago Acosta Cárdenas | Instituto Tecnológico de Matehuala</p>
+    </footer>
+</body>
+</html>

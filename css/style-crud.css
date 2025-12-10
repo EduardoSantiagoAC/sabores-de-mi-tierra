@@ -1,0 +1,179 @@
+/* css/style-crud.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('https://as1.ftcdn.net/v2/jpg/08/95/25/90/1000_F_895259039_vudCnamcUKRCCAgdEwmfan8QJKgxW2QB.jpg') center/cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.header {
+    background-color: rgba(222, 184, 135, 0.9);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li { margin-left: 25px; }
+.menu a {
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.menu a:hover { text-decoration: underline; }
+
+.content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    border: 1px solid #DEB887;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+h1, h2, h3 {
+    color: #8B4513;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background: linear-gradient(135deg, #F5DEB3, #DEB887);
+    color: #8B4513;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:nth-child(even) { background-color: #FFF8DC; }
+tr:hover { background-color: #F5DEB3; transition: 0.3s; }
+
+.btn {
+    padding: 8px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-add {
+    background: #8B4513;
+    color: white;
+}
+
+.btn-edit {
+    background: #D2691E;
+    color: white;
+}
+
+.btn-delete {
+    background: #B22222;
+    color: white;
+}
+
+.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #DEB887;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #DEB887;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #F5DEB3;
+    box-shadow: 0 0 8px rgba(245, 222, 179, 0.6);
+}
+
+button[type="submit"] {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #F5DEB3, #DEB887);
+    color: #8B4513;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+footer {
+    background-color: rgba(222, 184, 135, 0.9);
+    color: #8B4513;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}

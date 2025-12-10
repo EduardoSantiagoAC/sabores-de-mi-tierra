@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabores de Mi Tierra - Inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            position: relative;
+            padding-bottom: 60px;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://as2.ftcdn.net/v2/jpg/09/74/59/33/1000_F_974593304_FynCRKWxbqEHujWteG2BjNjBlC1npoCR.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(245, 222, 179, 0.6); 
+            filter: blur(10px); 
+        }
+        .header {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            padding: 5px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(2px);
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu li {
+            margin-left: 20px;
+        }
+        .menu li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .title-section {
+            text-align: center;
+            padding: 3px; 
+            background: linear-gradient(to bottom, #F5DEB3, #DEB887); 
+            color: #8B4513;
+            position: relative;
+            z-index: 10;
+        }
+        .hero {
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            z-index: 10;
+        }
+        .hero img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .hero-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(245, 222, 179, 0.9);
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .hero h2 {
+            margin: 0 0 10px 0;
+            color: #8B4513;
+            font-size: 2em;
+        }
+        .hero p {
+            margin: 0;
+            color: #8B4513;
+            font-size: 1.1em;
+        }
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); 
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            color: #8B4513;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 4px solid #8B4513;
+            border-radius: 4px;
+        }
+        ul li a {
+            color: #8B4513;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #DEB887;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #F5DEB3;
+            color: #8B4513;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #FFF8DC;
+        }
+        tr:hover {
+            background-color: #F5DEB3;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #8B4513;
+        }
+        input, textarea, select {
+            margin-top: 5px;
+            padding: 8px;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            background-color: white;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #F5DEB3;
+            color: #8B4513;
+            border: 1px solid #DEB887;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #DEB887;
+        }
+        .credits {
+            background-color: #F5DEB3;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        h1, h2, h3 {
+            color: #8B4513;
+        }
+        footer {
+            background-color: rgba(222, 184, 135, 0.8);
+            color: #8B4513;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 10;
+        }
+        /* Estilos específicos para index */
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #DEB887;
+            border-radius: 8px;
+            width: 30%;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(to right, #F5DEB3, #DEB887);
+            color: #8B4513;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+        <header class="header">
+        <div class="logo">Sabores de Mi Tierra</div>
+        <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="historia.html">Historia</a></li>
+            <li><a href="platillos.html">Platillos</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="multimedia.html">Multimedia</a></li>
+            <li><a href="enlaces.html">Enlaces</a></li>
+            
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+            <li style="margin-left: auto;">
+             <a href="usuarios/login.php" title="Panel de Administración" 
+               style="color: rgba(139, 69, 19, 0.9); font-size: 1.2em; text-decoration: none;">
+              <i class="fas fa-user"></i>
+             </a>
+            </li>
+
+        </ul>
+    </header>
+
+    <section class="title-section">
+        <h1>Sabores de Mi Tierra</h1>
+    </section>
+
+    <section class="hero">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.kKdzs7o6rYrdPAf4WgiOpQHaGn?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Imagen hero representativa de gastronomía potosina">
+        <div class="hero-overlay">
+            <h2>Un recorrido por la gastronomía tradicional de San Luis Potosí</h2>
+            <p>Descubre la rica herencia cultural a través de sabores ancestrales y mestizos.</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="intro">
+            <p>¡Bienvenido a "Sabores de Mi Tierra"! Este sitio web está dedicado a explorar la rica gastronomía tradicional de San Luis Potosí, un estado lleno de historia, sabores y tradiciones que reflejan nuestra identidad cultural. A través de estas páginas, descubrirás el origen de nuestros platillos, sus ingredientes emblemáticos, recetas paso a paso y mucho más.</p>
+            <a href="platillos.html" class="cta-button">Explora Platillos</a>
+        </div>
+
+        <div class="cards-container">
+            <div class="card">
+                <h3>Historia</h3>
+                <p>Orígenes prehispánicos, influencias coloniales y la fusión mestiza que define nuestra cocina.</p>
+                <a href="historia.html" style="color: #8B4513; text-decoration: none;">Ver Historia</a>
+            </div>
+            <div class="card">
+                <h3>Platillos</h3>
+                <p>Descubre emblemáticos como enchiladas potosinas y zacahuil con descripciones detalladas.</p>
+                <a href="platillos.html" style="color: #8B4513; text-decoration: none;">Ver Platillos</a>
+            </div>
+            <div class="card">
+                <h3>Ingredientes</h3>
+                <p>Comparación de elementos clave y su rol en la tradición potosina.</p>
+                <a href="tabla.html" style="color: #8B4513; text-decoration: none;">Ver Tabla</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Eduardo Santiago Acosta Cárdenas | Instituto Tecnológico de Matehuala</p>
+    </footer>
+</body>
+</html>
